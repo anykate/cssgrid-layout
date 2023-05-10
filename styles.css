@@ -1,0 +1,74 @@
+.container {
+    width: 95vw;
+    margin: 0 auto;
+    background-color: whitesmoke;
+    /* outline: 4px solid #4834d4; */
+    padding: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-gap: 0.5rem;
+    grid-template-areas:
+        "nav nav nav"
+        "sidebar body body"
+        "sidebar contactform contactform"
+        "sidebar teams teams"
+        "footer footer footer";
+}
+
+.nav {
+    grid-area: nav;
+}
+
+.sidebar {
+    grid-area: sidebar;
+}
+
+.body {
+    grid-area: body;
+}
+
+.contactform {
+    grid-area: contactform;
+}
+
+.teams {
+    grid-area: teams;
+}
+
+.footer {
+    grid-area: footer;
+}
+
+.item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid #222;
+    box-shadow: 1px 2px 3px grey;
+    border-radius: 8px;
+    color: #222;
+    font-size: 2em;
+    font-family: arial, sans-serif;
+    background-color: #f9d423;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.item:hover {
+    color: #fff;
+    background-color: #000;
+}
+
+@media only screen and (max-width: 576px) {
+    .container {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(6, 1fr);
+        grid-template-areas:
+            "nav"
+            "sidebar"
+            "body"
+            "contactform"
+            "teams"
+            "footer";
+    }
+}
